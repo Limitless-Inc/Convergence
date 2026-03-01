@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png" sizes="32x32">
+    <title>Convergence · professional software suite</title>
+    <!-- clean, modern, production-ready style (no external dependencies) -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fb;
+            color: #1e293b;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* fallback font stack – no external fonts required, but looks crisp */
+        h1, h2, h3, .btn, header p {
+            letter-spacing: -0.02em;
+        }
+
+        /* main container for sticky footer */
+        .wrapper {
+            flex: 1 0 auto;
+        }
+
+        /* ----- header / hero section ----- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 0.75rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0%;
+        }
+
+       .logo {
+    width: 100px; /* Small, sleek icon size */
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+.site-header h1 {
+    font-size: 1.25rem; /* Professional size, not giant */
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(135deg, #0b2845, #1f5e9e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.01em;
+}
+
+.site-header .tagline {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 0 0 12px;
+    border-left: 1px solid #e2e8f0;
+    border-bottom: none; /* Removed the line from original */
+}
+        /* ----- downloads section (professional cards) ----- */
+.downloads-section {
+    margin-top: 2rem; /* Reduced top margin since header is smaller */
+}}
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: #0b2a41;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #1f5e9e, #79b9ee);
+            margin: 0.8rem auto 0;
+            border-radius: 4px;
+        }
+
+        .app-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+
+        .app-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.2rem 1.8rem 2.2rem 1.8rem;
+            width: 360px;
+            max-width: 100%;
+            box-shadow: 0 20px 35px -10px rgba(0, 45, 80, 0.15), 0 2px 6px rgba(0,0,0,0.02);
+            transition: transform 0.25s ease, box-shadow 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ffffff50;
+            backdrop-filter: blur(2px);
+            text-align: left;
+        }
+
+        .app-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 45px -12px rgba(0, 65, 120, 0.25);
+            border-color: #eef5ff;
+        }
+
+        .app-icon {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 6px 8px #a0c4e4);
+        }
+
+        .app-card h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin: 0.75rem 0 0.25rem 0;
+            color: #0b2845;
+            border-left: 5px solid #1f5e9e;
+            padding-left: 1rem;
+        }
+
+        .app-sub {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #53718e;
+            margin: 0 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .app-sub span {
+            background: #ecf3fa;
+            border-radius: 40px;
+            padding: 0.2rem 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1c4d7a;
+        }
+
+        .description {
+            color: #2d4056;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0.75rem 0 1.75rem 0;
+            flex-grow: 1;
+            border-top: 1px dashed #cbdae9;
+            padding-top: 1.2rem;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            background: #0b2845;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+            border-radius: 60px;
+            width: 100%;
+            border: none;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+            box-shadow: 0 8px 18px -6px #0b284560;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-download i {
+            font-size: 1.4rem;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .btn-download:hover {
+            background: #143e66;
+            box-shadow: 0 14px 24px -8px #0e3a60;
+        }
+
+        .btn-download:active {
+            transform: scale(0.98);
+        }
+
+        /* optional metadata (size / version) */
+        .file-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            color: #627b99;
+            font-size: 0.85rem;
+            padding-inline: 0.2rem;
+        }
+
+        /* ----- footer ----- */
+.site-footer {
+    background: #0f172a; /* Deeper, more professional navy */
+    color: #94a3b8;
+    padding: 4rem 2rem 2rem;
+    border-top: 1px solid #1e293b;
+    font-size: 0.9rem;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Emphasis on branding column */
+    gap: 3rem;
+}
+
+        .site-footer p {
+            margin: 0.3rem 0;
+            opacity: 0.9;
+        }
+        .footer-brand h4 {
+    color: #f8fafc;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.footer-bottom {
+    max-width: 1200px;
+    margin:  auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.footer-brand p {
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-column h5 {
+    color: #f8fafc;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+}
+
+       .footer-links {
+    display: flex;
+    flex-direction: column; /* Stacked links are more professional */
+    gap: 0.75rem;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+  .footer-links a:hover {
+    color: #38bdf8; /* Action blue highlight */
+}
+
+        /* subtle fallback for missing images (if logo missing, show text) */
+        .logo-fallback {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(145deg, #0b2845, #1f5e9e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Responsive Footer */
+@media (max-width: 850px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-brand p { max-width: 100%; }
+    .footer-bottom { flex-direction: column; gap: 1rem; }
+}
+
+        /* make sure everything is responsive */
+        @media (max-width: 700px) {
+            .site-header h1 {
+                font-size: 2.6rem;
+            }
+            .app-card {
+                width: 100%;
+                max-width: 450px;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* dummy icon font fallback (using inline 'emoji' — but looks clean) */
+        .no-icon:before {
+            content: "⬇️ ";
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+ <header class="site-header">
+    <div class="brand-group">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="C" class="logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="logo-fallback" style="display: none; font-weight: 800; color: #0b2845;">⧩</span>
+        </div>
+        <h1>Convergence</h1>
+        <p class="tagline">By LimitlessInc</p>
+    </div>
+
+    <div class="header-cta">
+        <span style="font-size: 0.8rem; color: #10b981; font-weight: 600; background: #ecfdf5; padding: 4px 12px; border-radius: 20px; border: 1px solid #d1fae5;">
+            ● Official Products Page
+        </span>
+    </div>
+</header>
+        <section class="downloads-section">
+            <h2 class="section-title">Get Our Apps Now</h2>
+            <div class="app-grid">
+                <!-- App 1 – professional card -->
+                <div class="app-card">
+                    <div class="app-icon"><img src="images/pulse.png"></div>
+                    <h3>Pulse Medical System</h3>
+                    <div class="app-sub">
+                        <span>v1.0</span> • 64-bit
+                    </div>
+                    <p class="description">
+                        Pulse is a comprehensive medical application designed to streamline hospital operations, enhance patient care, and optimize resource management.
+                    </p>
+                    <!-- real download link with 'download' attribute and proper file -->
+                    <a href="apps/Pulse.exe" download class="btn-download">
+                        <i>⬇️</i> Download Pulse Now
+                    </a>
+                    <div class="file-meta">
+                        <span>📁 13 MB</span>
+                        <span>🔐 SHA-256</span>
+                    </div>
+                </div>
+
+                <!-- App 2 – professional card -->
+                <div class="app-card">
+                    <div class="app-icon"><img src="images/lms.png"></div>
+                    <h3>Library Managment System</h3>
+                    <div class="app-sub">
+                        <span>v3.0</span> • 64/32-bit
+                    </div>
+                    <p class="description">
+                        Library management system for modern libraries. Manage collections, track fines, and generate reports quickly and with ease.
+                    </p>
+                    <a href="apps/LMS.exe" download class="btn-download">
+                        <i>⬇️</i> Download LMS Now
+                    </a>
+                    <div class="file-meta">
+                        <span>📁 150 MB</span>
+                        <span>🔐 SHA-256</span>
+                    </div>
+                </div>
+
+                <!-- optional extra app card to show scalability / product family - but keep two? 
+                     add a third for a more 'suite' feeling, still professional. (All downloads work) -->
+                <div class="app-card">
+                    <div class="app-icon"><img src="images/evote.png"></div>
+                    <h3>Evote</h3>
+                    <div class="app-sub">
+                        <span>v2.0</span> • 64/32-bit
+                    </div>
+                    <p class="description">
+                        Evote is a secure and user-friendly voting application designed for organizations, clubs, and communities to conduct elections and polls with confidence.
+                    </p>
+                    <a href="apps/Evote.exe" download class="btn-download">
+                        <i>⬇️</i> Download Evote Now
+                    </a>
+                    <div class="file-meta">
+                        <span>📁 5 MB</span>
+                        <span>🚀 official</span>
+                    </div>
+                </div>
+            </div>
+            <!-- subtle trust row -->
+            <p style="text-align: center; margin-top: 3rem; color: #43709a; font-size: 0.95rem;">
+                ✅ Signed installers · Verified by Convergence
+            </p>
+        </section>
+    </div>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h4>Convergence</h4>
+            <p>Empowering industries through unified, high-performance software solutions. Built for reliability, designed for speed.</p>
+        </div>
+
+        <div class="footer-column">
+            <h5>Product</h5>
+            <div class="footer-links">
+                <a href="#">Release Notes</a>
+                <a href="#">System Requirements</a>
+                <a href="#">Security Features</a>
+                <a href="#">Direct Mirror</a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h5>Resources</h5>
+            <div class="footer-links">
+                <a href="#">Documentation</a>
+                <a href="#">Help Center</a>
+                <a href="#">API Reference</a>
+                <a href="#">Community</a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h5>Legal</h5>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">EULA</a>
+                <a href="#">License Info</a>
+            </div>
+        </div>
+    </div>
+<center>
+    <div class="footer-bottom">
+        <p>© 2026 LimitlessInc. All rights reserved.</p>
+ 
+    </div>
+</center>
+</footer>
+
+    <!-- tiny script to ensure logo fallback works if image missing (already inline) but also smooth hover -->
+    <script>
+        (function() {
+            // if logo image fails to load, show text fallback (already in onerror)
+            // also add a tiny protection for older browsers: handle logo display
+            const logo = document.querySelector('.logo');
+            if (logo) {
+                logo.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    const fallback = document.querySelector('.logo-fallback');
+                    if (fallback) fallback.style.display = 'block';
+                });
+            }
+            // all download links point to real .exe files inside /apps — they will work when hosted.
+            // no placeholder links, they are real relative paths.
+        })();
+    </script>
+</body>
+</html>
